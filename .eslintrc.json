@@ -1,0 +1,83 @@
+{
+	"root": true,
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true
+	},
+	"settings": {
+		"react": {
+		  "createClass": "createReactClass", // Regex for Component Factory to use,
+											 // default to "createReactClass"
+		  "pragma": "React",  // Pragma to use, default to "React"
+		  "fragment": "Fragment",  // Fragment to use (may be a property of <pragma>), default to "Fragment"
+		  "version": "detect", // React version. "detect" automatically picks the version you have installed.
+							   // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+							   // default to latest and warns if missing
+							   // It will default to "detect" in the future
+		  "flowVersion": "0.53" // Flow version
+		}
+	},
+	"globals": {
+		"elementor": "readonly",
+		"elementorFrontend": "readonly",
+		"shopEngineWishlist": "readonly",
+		"SimpleScrollbar": "readonly",
+		"Shopengine_Template_Form_Editor": "readonly",
+		"Shopengine_Template_No_Product": "readonly",
+		"shopEngineComparison": "readonly",
+		"React": "readonly",
+		"ReactDOM": "readonly",
+		"htm": "readonly",
+		"jQuery": "readonly",
+		"Swiper": "readonly",
+		"bodymovin": "readonly",
+		"ShopEngine_Helper": "readonly",
+		"shopengine_admin_var": "readonly",
+		"wc_cart_params": "readonly",
+		"shopEngineApiSettings": "readonly",
+		"ajaxurl": "readonly",
+		"swatch_conf": "readonly",
+		"shopengine": "readonly",
+		"shopengine_has_product_status": "readonly",
+		"wc_add_to_cart_variation_params": "readonly",
+		"wc_checkout_params": "readonly",
+		"wwb_api": "readonly",
+		"wp": true,
+		"wpApiSettings": true,
+		"wcSettings": true,
+		"es6": true
+	},
+	"rules": {
+		"camelcase": 0,
+		"curly": 0,
+		"indent": [
+			"error",
+			"tab"
+		],
+		"eqeqeq": 1,
+		"max-len": 0,
+		"no-console": 1,
+		"no-alert": 0,
+        "jsdoc/require-param": 0,
+        "jsdoc/require-param-type": 0,
+		"linebreak-style": ["error", "windows"]
+	},
+	"parser": "@babel/eslint-parser",
+	"parserOptions": {
+		"requireConfigFile": false,
+		"ecmaVersion": 8,
+		"ecmaFeatures": {
+			"modules": true,
+			"experimentalObjectRestSpread": true,
+			"jsx": true
+		}
+	},
+	"extends": [
+		"plugin:@wordpress/eslint-plugin/es5",
+		// "plugin:@wordpress/eslint-plugin/jsdoc",
+		"plugin:@wordpress/eslint-plugin/react"
+		// "plugin:@wordpress/eslint-plugin/esnext",
+		// "plugin:@wordpress/eslint-plugin/i18n",
+	]
+}

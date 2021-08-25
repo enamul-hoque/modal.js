@@ -1,0 +1,2 @@
+# Custom lint ignore files
+widgets/**/scss/base/_reset_*.scss

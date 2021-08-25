@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Modal.js - Dialog / Popup JavaScript plugin</title>
+
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+        
+        #messageBox {
+            display: none;
+        }
+
+        #messageBox.active {
+            display: block;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            right: 0;
+            max-width: 480px;
+            padding: 0 20px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+            transform: translate(-50%);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <button type="button" data-modal="messageBox">Open Modal</button>
+
+    <div id="messageBox">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde beatae sint illo nobis animi debitis laborum ut incidunt maxime nam quo eligendi nostrum, at alias optio repellat sunt doloribus rerum.</p>
+    </div>
+    
+    <!-- Modal.js -->
+    <script src="assets/js/modal.js"></script>
+</body>
+</html>

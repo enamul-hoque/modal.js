@@ -1,0 +1,9 @@
+# Custom lint ignore files
+**/lang/*.js
+*.min.js
+**/jquery.easing.1.3.js
+**/htm.js
+node_modules
+node_modules/**
+**/js/app.js
+**/js/simple-scrollbar.js

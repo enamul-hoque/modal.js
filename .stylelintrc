@@ -1,0 +1,14 @@
+{
+	"rules": {
+		"font-family-no-missing-generic-family-keyword": null,
+		"selector-id-pattern": "",
+		"selector-class-pattern": "",
+		"no-descending-specificity": null,
+		"declaration-property-unit-allowed-list": {
+			"/.*/": ["em", "px", "rem", "vw", "vh", "%", "s", "deg", "fr" ]
+		}
+	},
+	"extends": [
+		"@wordpress/stylelint-config/scss"
+	]
+}
