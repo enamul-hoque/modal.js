@@ -6,27 +6,46 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+// Class: Modal
 var Modal = /*#__PURE__*/function () {
   function Modal(modalId) {
     _classCallCheck(this, Modal);
 
-    this.modalId = modalId;
+    this.id = modalId;
+    this.target = document.getElementById(modalId);
   }
 
   _createClass(Modal, [{
     key: "open",
     value: function open() {
-      document.getElementById(this.modalId).classList.toggle('active');
+      this.target.classList.add('active');
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      this.target.classList.remove('active');
     }
   }]);
 
   return Modal;
-}();
+}(); // Init
 
-var modal = new Modal('messageBox');
-var btns = document.querySelectorAll('[data-modal]');
-btns[0].addEventListener('click', function () {
-  modal.open();
+
+var btns = document.querySelectorAll('[data-modal]'),
+    modals = {};
+btns.forEach(function (el) {
+  var modalId = el.dataset.modal; // Init class with modal id.
+
+  modals[modalId] = new Modal(modalId); // Add click events.
+
+  el.addEventListener('click', function () {
+    modals[modalId].open();
+  }); // Close button.
+
+  closeBtn = document.querySelectorAll('#' + modalId + ' .close')[0];
+  closeBtn.addEventListener('click', function () {
+    modals[modalId].close();
+  });
 });
 /******/ })()
 ;

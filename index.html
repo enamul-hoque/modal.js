@@ -32,6 +32,23 @@
             transform: translate(-50%);
             z-index: 999;
         }
+
+        .close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            box-shadow: 0 5px 8px rgb(0 0 0 / 15%);
+            border-radius: 50%;
+            text-align: center;
+            font-size: 18px;
+            line-height: 30px;
+            font-family: Arial;
+            font-style: normal;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -39,6 +56,8 @@
     <button type="button" data-modal="messageBox">Open Modal</button>
 
     <div id="messageBox">
+        <i class="close">x</i>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde beatae sint illo nobis animi debitis laborum ut incidunt maxime nam quo eligendi nostrum, at alias optio repellat sunt doloribus rerum.</p>
     </div>
     

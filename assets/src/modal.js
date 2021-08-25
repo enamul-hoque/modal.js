@@ -1,17 +1,38 @@
+// Class: Modal
 class Modal {
     constructor(modalId) {
-        this.modalId = modalId;
+        this.id = modalId;
+        this.target = document.getElementById( modalId );
     }
 
     open() {
-        document.getElementById( this.modalId ).classList.toggle( 'active' );
+        this.target.classList.add( 'active' );
+    }
+
+    close() {
+        this.target.classList.remove( 'active' );
     }
 }
 
-const modal = new Modal('messageBox');
 
-const btns = document.querySelectorAll('[data-modal]');
+// Init
+const btns = document.querySelectorAll('[data-modal]'),
+      modals = {};
 
-btns[0].addEventListener('click', function () {
-    modal.open();
+btns.forEach(function (el) {
+    const modalId = el.dataset.modal;
+
+    // Init class with modal id.
+    modals[ modalId ] = new Modal( modalId );
+
+    // Add click events.
+    el.addEventListener('click', function () {
+        modals[ modalId ].open();
+    });
+
+    // Close button.
+    closeBtn = document.querySelectorAll( '#' + modalId + ' .close' )[0];
+    closeBtn.addEventListener('click', function () {
+        modals[ modalId ].close();
+    });
 });
